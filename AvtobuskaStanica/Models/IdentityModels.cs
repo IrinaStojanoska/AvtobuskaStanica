@@ -29,5 +29,7 @@ namespace AvtobuskaStanica.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AvtobuskaStanica.Models.Relation> Relations { get; set; }
     }
 }

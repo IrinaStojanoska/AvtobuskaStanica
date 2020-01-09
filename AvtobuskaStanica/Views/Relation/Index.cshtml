@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AvtobuskaStanica.Models.Relation>
+
+@{
+    ViewBag.Title = "Возен Ред";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Возен ред</h2>
+
+<button type="button" class="btn btn-outline-secondary">
+    @Html.ActionLink("Додади нова релација", "CreateRelation")
+</button>
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            Од
+        </th>
+        <th>
+            До
+        </th>
+
+        <th>
+          Цена еден правец
+        </th>
+        <th>
+            Цена повратен билет
+        </th>
+        <th>
+            Поаѓање
+        </th>
+        <th>
+            Превозник
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fromDestination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.toDestination)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.priceOneWay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.priceRoundTrip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.company)
+        </td>
+        <td>
+            @if (User.IsInRole("Editor") || User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Измени", "Edit", new { id = item.id }) 
+            } 
+            @Html.ActionLink("Детали", "Details", new { id = item.id }) |
+
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Избриши", "Delete", new { id = item.id })
+            }
+           
+                @Html.ActionLink("Купи билет", "TicketSale", new { id = item.id })
+            
+            </td>
+    </tr>
+}
+
+</table>

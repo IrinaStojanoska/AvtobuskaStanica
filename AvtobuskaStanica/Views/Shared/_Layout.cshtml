@@ -9,32 +9,35 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Почетна", "Index", "Home")</p>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Возен Ред", "Index", "Relation")</p>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Контакт", "ContactPage", "PageDown")</p>
+                </li>
+            </ul>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a >@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</a>
+                <a style="margin-left:5px">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</a>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+   
     </div>
 
     @Scripts.Render("~/bundles/jquery")

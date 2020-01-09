@@ -385,6 +385,31 @@ namespace AvtobuskaStanica.Controllers
             return View(model);
         }
 
+
+        public ActionResult AddUserToRole()
+        {
+            var model = new AddToRoleModel();
+            model.roles.Add("Admin");
+            model.roles.Add("Editor");
+            model.roles.Add("User");
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult AddUserToRole(AddToRoleModel model)
+        {
+            try
+            {
+                var user = UserManager.FindByEmail(model.Email);
+                UserManager.AddToRole(user.Id, model.selectedRole);
+                return RedirectToAction("Index", "Home");
+            }
+            catch(Exception e)
+            {
+                return HttpNotFound();
+            }
+        }
+
+
         //
         // POST: /Account/LogOff
         [HttpPost]

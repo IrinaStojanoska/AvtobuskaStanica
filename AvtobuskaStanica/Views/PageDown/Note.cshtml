@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Note";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Забелешка</h2>
+<div class="form-group">
+    <label for="exampleInputEmail1">Наслов</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+</div>
+<div class="form-group">
+    <label for="exampleTextarea">Текст</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+</div>
+<div class="form-group">
+    <label for="exampleInputFile">Прикачи слика</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+</div>
+<a href="@Url.Action("Index", "Home")">
+    <input type="submit" class="btn btn-outline-primary" value="Испрати"/>
+</a>

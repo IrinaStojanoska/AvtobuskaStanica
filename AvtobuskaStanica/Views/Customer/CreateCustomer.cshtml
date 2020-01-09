@@ -1,0 +1,81 @@
+﻿@model AvtobuskaStanica.Models.Customer
+
+@{
+    ViewBag.Title = "CreateCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Внеси лични податоци</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.serialNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.serialNumber, new { htmlAttributes = new { @class = "form-control", @id = "serialNumber" } })
+            @Html.ValidationMessageFor(model => model.serialNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    @*<div class="form-group">
+            <fieldset>
+                <label class="control-label col-md-2" for="readOnlyInput">Сериски број</label>
+                <input class="form-control" id="serialNumber" type="text" readonly="">
+            </fieldset>
+        </div>*@
+
+    <script>
+        var now = new Date();
+        var randomNum = '';
+        randomNum += Math.round(Math.random() * 9);
+        randomNum += Math.round(Math.random() * 9);
+        randomNum += now.getTime();
+        var elem = document.getElementById("serialNumber").value = randomNum;
+    </script>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.name, "Име", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.cardNumber, "Број на картичка", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cardNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cardNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <label class="control-label col-md-2" for="readOnlyInput">Пин</label>
+            <input class="form-control" id="pin" type="password">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div style="margin-left:15px">
+            <a href="@Url.Action("Index", "Relation")" class="btn btn-danger">Откажи</a>
+
+            <input type="submit" value="Потврди" class="btn btn-primary" />
+        </div>
+
+    </div>
+</div>
+}
+
+

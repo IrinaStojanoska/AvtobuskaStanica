@@ -1,0 +1,87 @@
+﻿@model AvtobuskaStanica.Models.Relation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3 style="text-align:center">Дали сте сигурни дека сакате да ја избришете избраната релација?</h3>
+
+<div class="card" style="width: 350px; margin:auto; text-align:center">
+    <img class="card-img-top" src="~/Content/Mercedes-Benz-buses-wallpaper.jpg" width="100%" height="100%">
+    <div class="card-body">
+        <h5 class="card-title">Детали</h5>
+        <div class="card-text">
+            <dl class="dl-horizontal">
+                <dt>
+                    Од
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fromDestination)
+                </dd>
+
+                <dt>
+                    До
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.toDestination)
+                </dd>
+
+                <dt>
+                    Цена еден правец
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.priceOneWay)
+                </dd>
+
+                <dt>
+                    Цена повратен билет
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.priceRoundTrip)
+                </dd>
+
+                <dt>
+                    Слободни места
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.capacity)
+                </dd>
+
+                <dt>
+                    Време
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.time)
+                </dd>
+
+                <dt>
+                    Превозник
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.company)
+                </dd>
+
+            </dl>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <a href="@Url.Action("Index", "Relation")" class="btn btn-primary">Назад</a>
+            <input type="submit" value="Избриши" class="btn btn-danger" />
+
+        </div>
+        }
+    </div>
+</div>
