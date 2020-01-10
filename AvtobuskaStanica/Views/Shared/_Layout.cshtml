@@ -27,8 +27,14 @@
                     <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Контакт", "ContactPage", "PageDown")</p>
                 </li>
                 <li class="nav-item">
-                    <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Додади член", "Index", "Role")</p>
-                </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Додади улога", "Index", "Role")</p>
+                        }
+                    }
+                    </li>
             </ul>
             
             <div class="btn-group" role="group" aria-label="Basic example">

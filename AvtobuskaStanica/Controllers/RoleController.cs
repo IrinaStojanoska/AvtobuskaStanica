@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace AvtobuskaStanica.Controllers
 {
+   
     public class RoleController : Controller
     {
         private ApplicationRoleManager _roleManager;
@@ -35,6 +36,7 @@ namespace AvtobuskaStanica.Controllers
         }
 
         // GET: Role
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             List<RoleViewModel> list = new List<RoleViewModel>();
@@ -45,7 +47,7 @@ namespace AvtobuskaStanica.Controllers
             return View(list);
         }
 
-
+       
         public ActionResult Create()
         {
             return View();

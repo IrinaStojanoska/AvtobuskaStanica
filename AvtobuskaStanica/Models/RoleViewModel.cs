@@ -12,10 +12,12 @@ namespace AvtobuskaStanica.Models
         {
             id = role.Id;
             name = role.Name;
+          //  roles = new List<string>();
         }
 
         public string id { get; set; }
         public string  name { get; set; }
+      //  public List<string> roles { get; set; }
 
     }
 }

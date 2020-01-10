@@ -57,10 +57,10 @@
             @Html.DisplayFor(modelItem => item.company)
         </td>
         <td>
-            @if (User.IsInRole("Editor") || User.IsInRole("Admin"))
+            @if (User.IsInRole("Sales") || User.IsInRole("Admin"))
             {
-                @Html.ActionLink("Измени", "Edit", new { id = item.id }) 
-            } 
+                @Html.ActionLink("Измени", "Edit", new { id = item.id })
+            }
             @Html.ActionLink("Детали", "Details", new { id = item.id }) |
 
             @if (User.IsInRole("Admin"))

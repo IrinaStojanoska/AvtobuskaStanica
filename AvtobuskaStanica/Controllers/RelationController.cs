@@ -50,7 +50,7 @@ namespace AvtobuskaStanica.Controllers
         }
 
         // GET: Relation/Create
-        
+        [Authorize(Roles = "Admin,Sales")]
         public ActionResult CreateRelation()
         {
             return View();
@@ -59,6 +59,7 @@ namespace AvtobuskaStanica.Controllers
         // POST: Relation/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult CreateRelation([Bind(Include = "id,fromDestination,toDestination,priceOneWay, priceRoundTrip,capacity,time,company")] Relation relation)
         {
             if (ModelState.IsValid)
@@ -72,6 +73,8 @@ namespace AvtobuskaStanica.Controllers
         }
 
         // GET: Relation/Edit/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Sales")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +93,7 @@ namespace AvtobuskaStanica.Controllers
         // POST: Relation/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+     
         public ActionResult Edit([Bind(Include = "id,fromDestination,toDestination,priceOneWay, priceRoundTrip,capacity,time,company")] Relation relation)
         {
             if (ModelState.IsValid)
@@ -101,7 +105,7 @@ namespace AvtobuskaStanica.Controllers
             return View(relation);
         }
 
-
+        [AllowAnonymous]
         public ActionResult TicketSale(int? id)
         {
 
@@ -118,10 +122,11 @@ namespace AvtobuskaStanica.Controllers
         }
 
 
-      
+
 
 
         // GET: Relation/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

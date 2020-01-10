@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using AvtobuskaStanica.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AvtobuskaStanica
 {
@@ -65,5 +67,8 @@ namespace AvtobuskaStanica
             //    ClientSecret = ""
             //});
         }
+
+
+    
     }
 }

@@ -1,19 +1,20 @@
 ﻿@model IEnumerable<AvtobuskaStanica.Models.RoleViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Листа на улоги";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Додади нова", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            @*@Html.DisplayNameFor(model => model.name)*@
+            Име
         </th>
         <th></th>
     </tr>
@@ -24,9 +25,9 @@
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Измени", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.id }) |
+            @Html.ActionLink("Избриши", "Delete", new { id=item.id })
         </td>
     </tr>
 }
