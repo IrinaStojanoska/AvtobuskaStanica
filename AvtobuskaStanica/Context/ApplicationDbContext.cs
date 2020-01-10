@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AvtobuskaStanica.Context
 {
-    public class DatabaseContext :DbContext
+    public class ApplicationDbContext :DbContext
     {
         public DbSet<Relation> Relations { get; set; }
         public DbSet<Customer> Customers { get; set; }

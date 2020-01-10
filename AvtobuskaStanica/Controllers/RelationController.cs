@@ -14,7 +14,7 @@ namespace AvtobuskaStanica.Controllers
 
         Relation rel = new Relation();
         // GET: Relation
-        Context.DatabaseContext db = new Context.DatabaseContext();
+        Context.ApplicationDbContext db = new Context.ApplicationDbContext();
          public ActionResult OneRelation()
          {
 

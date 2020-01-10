@@ -11,7 +11,7 @@ namespace AvtobuskaStanica.Controllers
     {
 
         Customer customer = new Customer();
-        Context.DatabaseContext db = new Context.DatabaseContext();
+        Context.ApplicationDbContext db = new Context.ApplicationDbContext();
         
         // GET: Customer
         public ActionResult Index()

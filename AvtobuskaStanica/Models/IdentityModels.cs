@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -9,6 +10,10 @@ namespace AvtobuskaStanica.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        //[Required]
+        //public string Email { get; set; }
+        //public string password { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -18,10 +23,17 @@ namespace AvtobuskaStanica.Models
         }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole():base() { }
+        public ApplicationRole (string roleName):base(roleName) { }
+    }
+
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ApplicationDbContext", throwIfV1Schema: false)
         {
         }
 
@@ -31,5 +43,9 @@ namespace AvtobuskaStanica.Models
         }
 
         public System.Data.Entity.DbSet<AvtobuskaStanica.Models.Relation> Relations { get; set; }
+
+        public System.Data.Entity.DbSet<AvtobuskaStanica.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<AvtobuskaStanica.Models.Customer> Customers { get; set; }
     }
 }

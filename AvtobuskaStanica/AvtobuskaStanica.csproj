@@ -180,13 +180,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Context\DatabaseContext.cs" />
+    <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PageDownController.cs" />
     <Compile Include="Controllers\RelationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,6 +199,26 @@
     <Compile Include="Migrations\202001091957008_adding roles table.designer.cs">
       <DependentUpon>202001091957008_adding roles table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001092219072_new context.cs" />
+    <Compile Include="Migrations\202001092219072_new context.designer.cs">
+      <DependentUpon>202001092219072_new context.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101740024_roleManager.cs" />
+    <Compile Include="Migrations\202001101740024_roleManager.designer.cs">
+      <DependentUpon>202001101740024_roleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101817295_roles.cs" />
+    <Compile Include="Migrations\202001101817295_roles.designer.cs">
+      <DependentUpon>202001101817295_roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101823035_added customer table.cs" />
+    <Compile Include="Migrations\202001101823035_added customer table.designer.cs">
+      <DependentUpon>202001101823035_added customer table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101853408_updated data.cs" />
+    <Compile Include="Migrations\202001101853408_updated data.designer.cs">
+      <DependentUpon>202001101853408_updated data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
@@ -205,6 +226,7 @@
     <Compile Include="Models\Relation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelationModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -322,6 +344,11 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\PageDown\ContactPage.cshtml" />
     <Content Include="Views\Account\AddUserToRole.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -348,6 +375,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001091957008_adding roles table.resx">
       <DependentUpon>202001091957008_adding roles table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001092219072_new context.resx">
+      <DependentUpon>202001092219072_new context.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101740024_roleManager.resx">
+      <DependentUpon>202001101740024_roleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101817295_roles.resx">
+      <DependentUpon>202001101817295_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101823035_added customer table.resx">
+      <DependentUpon>202001101823035_added customer table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101853408_updated data.resx">
+      <DependentUpon>202001101853408_updated data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
