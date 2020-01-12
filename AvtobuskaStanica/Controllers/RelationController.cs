@@ -38,6 +38,7 @@ namespace AvtobuskaStanica.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Relation relation = db.Relations.Find(id);
+           
             if (relation == null)
             {
                 return HttpNotFound();
@@ -46,6 +47,24 @@ namespace AvtobuskaStanica.Controllers
            
            
           
+            return View(relation);
+        }
+
+        [Authorize(Roles = "Admin,Sales")]
+        public ActionResult RelationCustomers(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Relation relation = db.Relations.Find(id);
+           // relation.Customers = relation.Customers.ToList();
+            if (relation == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(relation);
         }
 
@@ -122,8 +141,7 @@ namespace AvtobuskaStanica.Controllers
         }
 
 
-
-
+   
 
         // GET: Relation/Delete/5
         [Authorize(Roles = "Admin")]

@@ -219,6 +219,18 @@
     <Compile Include="Migrations\202001101853408_updated data.designer.cs">
       <DependentUpon>202001101853408_updated data.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001102141355_added RelationCustomer.cs" />
+    <Compile Include="Migrations\202001102141355_added RelationCustomer.designer.cs">
+      <DependentUpon>202001102141355_added RelationCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001102238220_new update.cs" />
+    <Compile Include="Migrations\202001102238220_new update.designer.cs">
+      <DependentUpon>202001102238220_new update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001102240384_new update1.cs" />
+    <Compile Include="Migrations\202001102240384_new update1.designer.cs">
+      <DependentUpon>202001102240384_new update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
@@ -349,6 +361,7 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Relation\RelationCustomers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -390,6 +403,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001101853408_updated data.resx">
       <DependentUpon>202001101853408_updated data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001102141355_added RelationCustomer.resx">
+      <DependentUpon>202001102141355_added RelationCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001102238220_new update.resx">
+      <DependentUpon>202001102238220_new update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001102240384_new update1.resx">
+      <DependentUpon>202001102240384_new update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

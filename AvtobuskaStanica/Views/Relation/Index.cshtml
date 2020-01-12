@@ -57,20 +57,43 @@
             @Html.DisplayFor(modelItem => item.company)
         </td>
         <td>
+
             @if (User.IsInRole("Sales") || User.IsInRole("Admin"))
             {
-                @Html.ActionLink("Измени", "Edit", new { id = item.id })
+                @Html.ActionLink("Измени", "Edit", new { id = item.id }) 
             }
-            @Html.ActionLink("Детали", "Details", new { id = item.id }) |
+
+            @if (User.IsInRole("Sales") || User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Преглед", "RelationCustomers", new { id = item.id }) 
+            }
 
             @if (User.IsInRole("Admin"))
             {
                 @Html.ActionLink("Избриши", "Delete", new { id = item.id })
             }
-           
-                @Html.ActionLink("Купи билет", "TicketSale", new { id = item.id })
-            
-            </td>
+            @Html.ActionLink("Детали", "Details", new { id = item.id }) 
+
+            @Html.ActionLink("Купи билет", "TicketSale", new { id = item.id })
+
+
+
+            @*@if (User.IsInRole("Sales") || User.IsInRole("Admin"))
+        {
+        @Html.ActionLink("Измени", "Edit", new { id = item.id })
+        }
+        @Html.ActionLink("Детали", "Details", new { id = item.id }) |
+
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Избриши", "Delete", new { id = item.id })
+        }
+
+
+
+        @Html.ActionLink("Купи билет", "TicketSale", new { id = item.id })*@
+
+        </td>
     </tr>
 }
 

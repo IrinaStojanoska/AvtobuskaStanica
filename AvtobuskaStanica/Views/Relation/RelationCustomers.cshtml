@@ -1,17 +1,14 @@
 ﻿@model AvtobuskaStanica.Models.Relation
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "RelationCustomers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Преглед по продадени карти за релација</h2>
 
-
-<div class="card" style="width: 350px; margin:auto; text-align:center">
-    <img class="card-img-top" src="~/Content/Mercedes-Benz-buses-wallpaper.jpg" width="100%" height="100%">
-    <div class="card-body">
-        <h5 class="card-title">Детали</h5>
-        <div class="card-text">
+<div>
+  
     <dl class="dl-horizontal">
         <dt>
            Од
@@ -22,15 +19,15 @@
         </dd>
 
         <dt>
-            До
+            @Html.DisplayNameFor(model => model.toDestination)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.toDestination)
+           До
         </dd>
 
         <dt>
-            Цена еден правец
+           Цена еден правец
         </dt>
 
         <dd>
@@ -38,7 +35,7 @@
         </dd>
 
         <dt>
-            Цена повратен билет
+           Цена повратен билет
         </dt>
 
         <dd>
@@ -46,7 +43,7 @@
         </dd>
 
         <dt>
-            Слободни места
+           Капацитет
         </dt>
 
         <dd>
@@ -70,9 +67,13 @@
         </dd>
 
     </dl>
+    <h2>Билети</h2>
+    <ol>
+        <li>377749932</li>
+        <li>894637289</li>
+        <li>567499322</li>
+    </ol>
 </div>
-        
-        <a href="@Url.Action("Index", "Relation")" class="btn btn-primary">Назад</a>
-      
-    </div>
-</div>
+<p> |
+    @Html.ActionLink("Назад", "Index")
+</p>
