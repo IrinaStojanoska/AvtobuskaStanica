@@ -1,44 +1,50 @@
-﻿@model avtobuskastanica.models.addtorolemodel
+﻿@model AvtobuskaStanica.Models.AddUserToRole
 
 @{
-    viewbag.title = "addusertorole";
-    layout = "~/views/shared/_layout.cshtml";
+    ViewBag.Title = "AddUserToRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>addusertorole</h2>
-
-@using (html.beginform("addusertorole", "account")) 
+@using (Html.BeginForm("AddUserToRole", "Account"))
 {
-    @html.antiforgerytoken()
-    
-    <div class="form-horizontal">
-        <h4>addtorolemodel</h4>
-        <hr />
-        @html.validationsummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @html.labelfor(model => model.email, htmlattributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @html.editorfor(model => model.email, new { htmlattributes = new { @class = "form-control" } })
-                @html.validationmessagefor(model => model.email, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    @Html.AntiForgeryToken();
 
-        <div class="form-group">
-            @html.labelfor(model => model.selectedrole, "select role", htmlattributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @html.dropdownlistfor(model => model.selectedrole, new selectlist(model.roles), new { htmlattributes = new { @class = "form-control" } })
-                @html.validationmessagefor(model => model.selectedrole, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="create" class="btn btn-default" />
-            </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group" >
+            <select name="Позиции" class="control-label col-md-2" style="margin-left:25px" >
+                <option value="Admin">Admin</option>
+                <option value="Editor">Editor</option>
+                <option value="Moderator">Moderator</option>
+                <option value="Sales">Sales</option>
+            </select>
+        </div>
+
+    @*<div class="form-group">
+        @Html.DropDownListFor(model => model.selectedRole , new SelectList(AvtobuskaStanica.Models.RoleViewModel), new { @class="form-control"})
+    
+    </div>*@
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Додади</a>
+        </div>
+    </div>
+</div>
 }
 
 <div>
-    <a href="@url.action("index", "home")" class="btn btn-primary">назад</a>
+    <a href="@Url.Action("Index", "Home")" >Назад</a>
 </div>
+
+

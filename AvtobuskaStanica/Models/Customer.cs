@@ -18,6 +18,7 @@ namespace AvtobuskaStanica.Models
         public long cardNumber { get; set; }
 
         //public int relationId { get; set; }
-        public Relation Relation { get; set; }
+
+        public  Relation Relation { get; set; }
     }
 }

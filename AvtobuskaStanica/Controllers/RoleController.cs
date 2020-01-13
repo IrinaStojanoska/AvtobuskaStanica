@@ -85,7 +85,7 @@ namespace AvtobuskaStanica.Controllers
             var role = await RoleManager.FindByIdAsync(id);
             return View(new RoleViewModel(role));
         }
-
+        [HttpPost, ActionName("Delete")]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);

@@ -36,6 +36,15 @@
                         }
                     }
                 </li>
+                <li class="nav-item">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <p class="nav-link" style="color:forestgreen !important;">@Html.ActionLink("Назначи на улога", "AddUserToRole", "Account")</p>
+                        }
+                    }
+                </li>
             </ul>
 
             @if (Request.IsAuthenticated)

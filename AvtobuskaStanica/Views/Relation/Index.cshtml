@@ -7,8 +7,11 @@
 
 <h2>Возен ред</h2>
 
-<button type="button" class="btn btn-outline-secondary">
-    @Html.ActionLink("Додади нова релација", "CreateRelation")
+
+    @if (User.IsInRole("Sales") || User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Додади нова релација", "CreateRelation")
+    }
 </button>
 <br />
 <br />

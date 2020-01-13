@@ -11,6 +11,6 @@ namespace AvtobuskaStanica.Context
     {
         public DbSet<Relation> Relations { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<AddToRoleModel> AddRole { get; set; }
+        public DbSet<AddUserToRole> AddRole { get; set; }
     }
 }

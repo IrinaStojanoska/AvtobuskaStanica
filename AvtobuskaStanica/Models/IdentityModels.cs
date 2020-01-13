@@ -47,5 +47,7 @@ namespace AvtobuskaStanica.Models
         public System.Data.Entity.DbSet<AvtobuskaStanica.Models.RoleViewModel> RoleViewModels { get; set; }
 
         public System.Data.Entity.DbSet<AvtobuskaStanica.Models.Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<AvtobuskaStanica.Models.AddUserToRole> AddUserToRoles { get; set; }
     }
 }

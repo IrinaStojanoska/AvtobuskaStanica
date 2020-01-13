@@ -92,8 +92,8 @@ namespace AvtobuskaStanica.Controllers
         }
 
         // GET: Relation/Edit/5
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "Sales")]
+        [Authorize(Roles = "Admin, Sales")]
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -160,6 +160,7 @@ namespace AvtobuskaStanica.Controllers
         }
 
         // POST: Relation/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirm(int id)

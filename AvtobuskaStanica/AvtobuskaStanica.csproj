@@ -231,30 +231,31 @@
     <Compile Include="Migrations\202001102240384_new update1.designer.cs">
       <DependentUpon>202001102240384_new update1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001131818273_last.cs" />
+    <Compile Include="Migrations\202001131818273_last.designer.cs">
+      <DependentUpon>202001131818273_last.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001132040119_briri data.cs" />
+    <Compile Include="Migrations\202001132040119_briri data.designer.cs">
+      <DependentUpon>202001132040119_briri data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001132231004_added user to roles.cs" />
+    <Compile Include="Migrations\202001132231004_added user to roles.designer.cs">
+      <DependentUpon>202001132231004_added user to roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001132300405_added roles.cs" />
+    <Compile Include="Migrations\202001132300405_added roles.designer.cs">
+      <DependentUpon>202001132300405_added roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddToRoleModel.cs" />
+    <Compile Include="Models\AddUserToRole.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Relation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RelationModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RelationModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RelationModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RelationModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RelationModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RelationModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -279,25 +280,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="RelationModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RelationModel.edmx</DependentUpon>
-      <LastGenOutput>RelationModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="RelationModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RelationModel.edmx</DependentUpon>
-      <LastGenOutput>RelationModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="RelationModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RelationModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="RelationModel.edmx.diagram">
-      <DependentUpon>RelationModel.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -355,13 +339,12 @@
     <Content Include="Views\Customer\CreateCustomer.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\PageDown\ContactPage.cshtml" />
-    <Content Include="Views\Account\AddUserToRole.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
-    <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Relation\RelationCustomers.cshtml" />
+    <Content Include="Views\Account\AddUserToRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -412,6 +395,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001102240384_new update1.resx">
       <DependentUpon>202001102240384_new update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131818273_last.resx">
+      <DependentUpon>202001131818273_last.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001132040119_briri data.resx">
+      <DependentUpon>202001132040119_briri data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001132231004_added user to roles.resx">
+      <DependentUpon>202001132231004_added user to roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001132300405_added roles.resx">
+      <DependentUpon>202001132300405_added roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

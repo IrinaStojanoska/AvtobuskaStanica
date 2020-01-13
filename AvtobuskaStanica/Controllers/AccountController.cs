@@ -52,6 +52,31 @@ namespace AvtobuskaStanica.Controllers
             }
         }
 
+
+        public ActionResult AddUserToRole()
+        {
+            var model = new AddUserToRole();
+            model.roles.Add("Admin");
+            model.roles.Add("Sales");
+            model.roles.Add("Editor");
+            model.roles.Add("Moderator");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddUserToRole(AddUserToRole model)
+        {
+            try
+            {
+                var user = UserManager.FindByEmail(model.Email);
+                UserManager.AddToRole(user.Id, model.selectedRole);
+                return RedirectToAction("Index", "Home");
+            }
+            catch(Exception e)
+            {
+                return HttpNotFound();
+            }
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -396,28 +421,7 @@ namespace AvtobuskaStanica.Controllers
         }
 
 
-        public ActionResult AddUserToRole()
-        {
-            var model = new AddToRoleModel();
-            model.roles.Add("Admin");
-            model.roles.Add("Editor");
-            model.roles.Add("User");
-            return View(model);
-        }
-        [HttpPost]
-        public ActionResult AddUserToRole(AddToRoleModel model)
-        {
-            try
-            {
-                var user = UserManager.FindByEmail(model.Email);
-                UserManager.AddToRole(user.Id, model.selectedRole);
-                return RedirectToAction("Index", "Home");
-            }
-            catch(Exception e)
-            {
-                return HttpNotFound();
-            }
-        }
+  
 
 
         //

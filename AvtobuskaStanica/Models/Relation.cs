@@ -25,7 +25,8 @@ namespace AvtobuskaStanica.Models
         [Required]
         public string company { get; set; }
 
-        public ICollection<Customer> Customers { get; set; }
+        
+        public  ICollection<Customer> Customers { get; set; }
 
     }
 }
